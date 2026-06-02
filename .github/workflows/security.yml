@@ -43,7 +43,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v6.0.2
       - name: Run gosec
-        uses: securego/gosec@v2.26.1
+        uses: securego/gosec@v2.27.1
         with:
           args: '-no-fail -fmt sarif -out gosec.sarif ./...'
       - name: Upload SARIF
@@ -141,7 +141,7 @@ jobs:
       # and remediation recommendations. Runs on the same release/schedule
       # cadence as the Trivy image scan above.
       - name: Run Docker Scout
-        uses: docker/scout-action@v1.18.1
+        uses: docker/scout-action@v1.21.0
         with:
           command: quickview,cves,recommendations
           image: kinorai/crawl4ai-reddit-proxy:latest
